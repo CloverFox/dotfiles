@@ -24,6 +24,10 @@ dotfiles:
     src: config/zsh
     dst: ~/.config/zsh
     link: link
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+    link: link
 profiles:
   arch-fox:
     dotfiles:
@@ -32,3 +36,4 @@ profiles:
     - d_awesome
     - f_zshrc
     - d_zsh
+    - d_kitty
