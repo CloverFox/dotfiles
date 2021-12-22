@@ -1,0 +1,24 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+  link_on_import: link
+dotfiles:
+  d_picom:
+    link: link
+    src: config/picom
+    dst: ~/.config/picom
+  d_bg:
+    src: config/bg
+    dst: ~/.config/bg
+    link: link
+  d_awesome:
+    src: config/awesome
+    dst: ~/.config/awesome
+    link: link
+profiles:
+  arch-fox:
+    dotfiles:
+    - d_picom
+    - d_bg
+    - d_awesome
