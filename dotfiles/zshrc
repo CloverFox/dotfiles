@@ -5,7 +5,6 @@ SAVEHIST=10000
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/clover/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -19,14 +18,13 @@ ZSH_CONFIG=$HOME/.config/zsh/zsh-config
 [ -f $ZSH_CONFIG/alias.zsh ] && source $ZSH_CONFIG/alias.zsh
 [ -f $ZSH_CONFIG/theme.zsh ] && source $ZSH_CONFIG/theme.zsh
 
-# plugins, save to ~/zsh-plugins
+# plugins, download from github or from the AUR
 PLUGIN_CONFIG=/usr/share/zsh/plugins
 
 # https://github.com/zsh-users/zsh-autosuggestions
 source $PLUGIN_CONFIG/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # https://github.com/zsh-users/zsh-syntax-highlighting
-# note, should be at the end of he load order
 source $PLUGIN_CONFIG/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
@@ -37,10 +35,10 @@ source $PLUGIN_CONFIG/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # ~/.fzf/install
 #
+source /usr/share/fzf/key-bindings.zsh
+
 # load ssh keys
 eval $(keychain --eval --quiet id_ed25519)
-
-source /usr/share/fzf/key-bindings.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
