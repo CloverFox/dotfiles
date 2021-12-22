@@ -16,9 +16,19 @@ dotfiles:
     src: config/awesome
     dst: ~/.config/awesome
     link: link
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+    link: link
+  d_zsh:
+    src: config/zsh
+    dst: ~/.config/zsh
+    link: link
 profiles:
   arch-fox:
     dotfiles:
     - d_picom
     - d_bg
     - d_awesome
+    - f_zshrc
+    - d_zsh
