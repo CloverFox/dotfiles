@@ -11,3 +11,7 @@ function =
 {
 	echo "$@" | bc -l
 }
+
+# should probably make this "if kitty installed, alias this"
+type -P kitty &>/dev/null && alias ssh="kitty +kitten ssh"
+

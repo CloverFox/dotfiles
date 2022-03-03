@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-tile '/home/fox/.config/bg/bg.jpg' 
+feh --no-fehbg --bg-tile '/home/fox/.config/bg/bg-purp.jpg' 

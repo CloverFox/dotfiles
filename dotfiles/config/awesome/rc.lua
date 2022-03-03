@@ -52,6 +52,7 @@ end
 
 beautiful.init("/home/fox/.config/awesome/themes/default/theme.lua")
 
+beautiful.notification_icon_size = 200
 awful.spawn("/home/fox/.screenlayout/layout.sh", false)
 
 -- This is used later as the default terminal and editor to run.
