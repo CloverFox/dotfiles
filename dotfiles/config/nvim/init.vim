@@ -48,6 +48,8 @@ Plug 'valloric/MatchTagAlways'
 Plug 'rust-lang/rust.vim'
 " dotnet
 Plug 'OmniSharp/omnisharp-vim'
+"theme
+Plug 'morhetz/gruvbox'
 call plug#end()
 "file mappings for plugins
 
@@ -61,3 +63,7 @@ autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
 autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
 autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
 autocmd FileType cs nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
+
+lua require('init')
+
+autocmd vimenter * ++nested colorscheme gruvbox
