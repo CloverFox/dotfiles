@@ -28,6 +28,10 @@ dotfiles:
     src: config/kitty
     dst: ~/.config/kitty
     link: link
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+    link: link
 profiles:
   arch-fox:
     dotfiles:
@@ -37,3 +41,4 @@ profiles:
     - f_zshrc
     - d_zsh
     - d_kitty
+    - d_nvim
