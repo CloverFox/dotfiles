@@ -5,6 +5,10 @@ vim.opt.expandtab = true
 
 vim.opt.termguicolors = true
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+
 -- todo only in md files or something
 -- vim.opt.spell = true
 
