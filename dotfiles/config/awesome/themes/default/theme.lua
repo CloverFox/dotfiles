@@ -25,9 +25,9 @@ theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = "5" --dpi(5)
-theme.border_width  = dpi(1)
+theme.border_width  = dpi(2)
 theme.border_normal = "#000000"
-theme.border_focus  = "#6a3e7f"
+theme.border_focus  = "#d65d0e"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
@@ -98,7 +98,7 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 --theme.wallpaper = themes_path.."default/background.png"
-theme.wallpaper = "/home/fox/.config/bg/bg/jpg"
+theme.wallpaper = "/home/fox/.config/bg/bg.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

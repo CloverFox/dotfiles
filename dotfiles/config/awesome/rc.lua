@@ -69,9 +69,9 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
@@ -165,7 +165,9 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        -- gears.wallpaper.maximized(wallpaper, s, true)
+        -- gears.wallpaper.set(gears.surface(wallpaper, s, true)
+        gears.wallpaper.tiled(wallpaper)
     end
 end
 
@@ -177,8 +179,15 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    if s.index == 2 then -- second monitor that is vertical, probablty a better way of doing this
+        --todo make this not array based, if we change the array this will get messed up
+        awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[4])
+    else
+        awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    end
 
+    --if s.index == 2 then --second screen
+--        awful.tag.add
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -224,14 +233,13 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
+
 end)
 -- }}}
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () mymainmenu:toggle() end)
 ))
 -- }}}
 
@@ -284,6 +292,8 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "f",     function () awful.spawn("firefox-developer-edition") end,
+              {description = "launch firefox", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -591,6 +601,6 @@ do
   end
 end
 
-awful.spawn("/home/fox/.config/bg/.fehbg", false)
+-- awful.spawn("/home/fox/.config/bg/.fehbg", false)
 --awful.spawn("nitrogen --restore", false)
 --gears.wallpaper.maximized("/home/.config/bg/bg.jpg", s)
