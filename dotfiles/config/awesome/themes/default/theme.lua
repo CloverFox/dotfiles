@@ -11,10 +11,14 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "Fira Code Bold Nerd Font Complete Mono 8"
+-- theme.font          = "sans 8"
+
+local orange = "#d65d0e"
 
 theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
+theme.bg_focus      = orange
+-- theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
@@ -27,7 +31,7 @@ theme.fg_minimize   = "#ffffff"
 theme.useless_gap   = "5" --dpi(5)
 theme.border_width  = dpi(2)
 theme.border_normal = "#000000"
-theme.border_focus  = "#d65d0e"
+theme.border_focus  = orange
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
@@ -98,7 +102,7 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 --theme.wallpaper = themes_path.."default/background.png"
-theme.wallpaper = "/home/fox/.config/bg/bg.jpg"
+theme.wallpaper = "/home/fox/.local/share/bg/upscale-bg.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
