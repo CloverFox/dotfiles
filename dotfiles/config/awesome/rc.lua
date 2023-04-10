@@ -103,13 +103,13 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
---mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
---                                    { "open terminal", terminal }
---                                  }
---                        })
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "open terminal", terminal }
+                                  }
+                        })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+--mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+--                                     menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -172,7 +172,8 @@ local function set_wallpaper(s)
         end
         -- gears.wallpaper.maximized(wallpaper, s, true)
         -- gears.wallpaper.set(gears.surface(wallpaper, s, true)
-        gears.wallpaper.tiled(wallpaper)
+        gears.wallpaper.maximized(wallpaper, s)
+        -- gears.wallpaper.tiled(wallpaper)
     end
 end
 
@@ -270,8 +271,8 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
---    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
---              {description = "show main menu", group = "awesome"}),
+    --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    --          {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
